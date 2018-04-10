@@ -21,7 +21,7 @@ $manifest->save( 'public/manifest.json' );
 Route::get( 'manifest.json', function( ) {
     $manifest = new Manifest( );
     $manifest->name( Config::get( 'app.name' ) )
-        ->description( trans( 'site.meta.description' );
+        ->description( trans( 'site.meta.description' ) );
         
     return response( )->json( $manifest );
 } );
