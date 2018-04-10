@@ -1,0 +1,29 @@
+{
+    "name": "lukaswhite/manifest",
+    "description": "A PHP library for building web application manifests",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Lukas White",
+            "email": "hello@lukaswhite.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Lukaswhite\\Manifest\\": "src/Manifest"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "LukasWhite\\Manifest\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": ">=7.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.1",
+        "mikey179/vfsStream": "^1.6"
+    }
+}
