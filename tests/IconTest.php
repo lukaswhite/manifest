@@ -45,4 +45,21 @@ class IconTest extends TestCase
             'sizes' =>  '72x72 96x96 128x128 256x256',
         ], $icon->jsonSerialize( ) );
     }
+
+    public function testSettingDensity( )
+    {
+        $icon = new Icon(
+            'img/icon36x36.png',
+            '36x36',
+            'image/png',
+            2.0
+        );
+
+        $this->assertEquals( [
+            'src'       =>  'img/icon36x36.png',
+            'sizes'     =>  '36x36',
+            'type'      =>  'image/png',
+            'density'   =>  2.0,
+        ], $icon->jsonSerialize( ) );
+    }
 }

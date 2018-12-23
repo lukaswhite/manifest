@@ -29,13 +29,20 @@ class Icon implements \JsonSerializable
     protected $type;
 
     /**
+     * The density of the icon
+     *
+     * @var float
+     */
+    protected $density;
+
+    /**
      * Icon constructor.
      *
      * @param string $src
      * @param string|integer|array $sizes
      * @param string $type
      */
-    public function __construct( $src, $sizes, $type = null )
+    public function __construct( $src, $sizes, $type = null, $density = null )
     {
         $this->src = $src;
 
@@ -49,6 +56,10 @@ class Icon implements \JsonSerializable
 
         if ( $type ) {
             $this->type = $type;
+        }
+
+        if ( $density ) {
+            $this->density = $density;
         }
     }
 
@@ -85,6 +96,11 @@ class Icon implements \JsonSerializable
         if ( $this->type )
         {
             $data[ 'type' ] = $this->type;
+        }
+
+        if ( $this->density )
+        {
+            $data[ 'density' ] = $this->density;
         }
 
         return $data;

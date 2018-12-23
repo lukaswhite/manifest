@@ -214,6 +214,32 @@ class ManifestTest extends TestCase
             $manifest->jsonSerialize( )
         );
 
+        unset( $manifest );
+
+        $manifest = new Manifest( );
+
+        $manifest->icon(
+            new Icon(
+                'icon/hd_hi.ico',
+                [ 72, 96, 128, 256 ],
+                null,
+                2.0
+            )
+        );
+
+        $this->assertEquals(
+            [
+                'icons' => [
+                    [
+                        'src'       =>  'icon/hd_hi.ico',
+                        'sizes'     =>  '72x72 96x96 128x128 256x256',
+                        'density'   =>  2.0,
+                    ]
+                ],
+            ],
+            $manifest->jsonSerialize( )
+        );
+
     }
 
     public function testRelatedApplications( )
